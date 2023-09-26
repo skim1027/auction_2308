@@ -44,4 +44,13 @@ RSpec.describe Item do
       expect(item1.current_high_bid).to eq(22)
     end
   end
+
+  describe '#close_bidding' do
+    it 'shows bidding that is closed' do
+      item1.add_bid(attendee2, 20)
+      item1.add_bid(attendee1, 22)
+      item1.close_bidding
+      expect(item1.close_bidding).to eq(true)
+    end
+  end
 end
