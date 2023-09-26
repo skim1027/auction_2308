@@ -15,6 +15,7 @@ class Item
   end
 
   def close_bidding
-    
+    close = @bids.freeze
+    return "bid closed" if @bids.frozen? 
   end
 end

@@ -97,8 +97,8 @@ RSpec.describe Auction do
       item4.add_bid(attendee3, 50)
       item3.add_bid(attendee2, 15)
       expect(auction.bidder_info).to be_a(Hash)
-      expect(auction.bidder_info.keys.first.class).to be_a(Attendee)
-      expect(auction.bidder_info.values.first.class).to be_a(Hash)
+      expect(auction.bidder_info.keys.first.class).to eq(Attendee)
+      expect(auction.bidder_info.values.first.class).to eq(Hash)
     end
   end
 

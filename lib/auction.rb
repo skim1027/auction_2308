@@ -56,7 +56,6 @@ class Auction
       end
     end
     info
-    require 'pry'; binding.pry
   end
   
   def bid_item(attendee)

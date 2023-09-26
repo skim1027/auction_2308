@@ -34,6 +34,7 @@ RSpec.describe Item do
       item1.add_bid(attendee1, 22)
       expect(item1.bids).to be_a(Hash)
       expect(item1.bids.keys.first.class).to eq(Attendee)
+      expect(item1.bids).to eq({attendee1 => 22, attendee2 => 20})
     end
   end
 
@@ -50,7 +51,8 @@ RSpec.describe Item do
       item1.add_bid(attendee2, 20)
       item1.add_bid(attendee1, 22)
       item1.close_bidding
-      expect(item1.close_bidding).to eq(true)
+      expect(item1.close_bidding).to eq("bid closed")
+      expect(item1.bids).to eq({attendee1 => 22, attendee2 => 20})
     end
   end
 end
